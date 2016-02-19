@@ -11,6 +11,34 @@
         </head>
         <body>
         <script src="three.min.js"></script>
-        <script></script>
+        <script>
+        
+        
+        var escena=new THREE.Scene();
+        var fov=75;//Campo de Visión(field)
+        var aspect=window.innerWidth/window.innerHeight //Relación de aspecto.
+        var near=0.1;//Plano cercano
+        var far=1000;//Plano lejano
+        var camara=new THREE.PerspectiveCamera(fov,aspect,near,far)//checar
+        
+        camara.position.z=5;
+        
+        var renderer=new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth,window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        //falta
+        
+        //2a parte
+        var forma= new THREE.BoxGeometry(1,1,1);
+        var material=new THREE.MeshBasicMaterial({color:0x00ff00});
+        var cubo=new THREE.Mesh(forma,material);
+        escena.add(cubo);
+        function render(){
+          requestAnimationFrame(render);
+          renderer.render(escena,camara);
+        }
+        render();
+        
+        <script/>
         </body>
         </html>
