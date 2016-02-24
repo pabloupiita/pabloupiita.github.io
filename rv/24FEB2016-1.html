@@ -30,8 +30,8 @@
     </script>
     
     <script>
-    var geometry = new THREE.SphereGeometry( 1, 100, 100 );
-    var material = new THREE.MeshNormalMaterial( );
+    var geometry = new THREE.SphereGeometry(1);
+    var material = new THREE.MeshDepthMaterial( );
     var sphere = new THREE.Mesh( geometry, material );
     escena.add( sphere );
     
