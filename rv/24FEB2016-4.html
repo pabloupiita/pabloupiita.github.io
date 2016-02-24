@@ -44,13 +44,13 @@
     //var sphere = new THREE.Mesh( geometry, material );
     //escena.add( sphere );
     
-    function render(){
+    function loop(){
       requestAnimationFrame( render );
       malla.rotation.x += 0.000;
       malla.rotation.y +=0.000;
       renderer.render( escena, camara );
     }
-    render();
+    loop();
     </script>
   </body>
 </html>
