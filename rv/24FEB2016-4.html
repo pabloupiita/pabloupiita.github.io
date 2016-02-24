@@ -31,11 +31,17 @@
     
     <script>
     var figura = new THREE.Shape();
-    figura.moveTo(10,10);
-    figura.lineTo(10,40);
-    figura.lineTo(40,40);
-    figura.lineTo(10,10);
-    
+    figura.moveTo(3,3) ;
+    figura.lineTo(4,4);
+    figura.lineTo(2,6);
+    figura.lineTo(4,6); 
+    figura.lineTo(5,8); 
+    figura.lineTo(7,6); 
+    figura.lineTo(8,6); 
+    figura.lineTo(7,4); 
+    figura.lineTo(8,3); 
+    figura.lineTo(5,4); 
+        
     var forma = new THREE.ShapeGeometry(figura);
     var malla = new THREE.Mesh(forma);
     escena.add(malla);
