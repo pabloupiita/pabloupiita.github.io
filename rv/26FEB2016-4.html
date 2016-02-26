@@ -21,7 +21,7 @@
     
     var camara = new THREE.PerspectiveCamera( fov, aspect, near, far );
     
-    camara.position.z = 1000;
+    camara.position.z = 100;
     
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -33,7 +33,7 @@
     
     //La figura se establece sobre el plano zx
     var puntos=[];                              //Arreglo vacío
-    for (var i=0;i<100;i++){
+    for (var i=0;i<10;i++){
     puntos.push(new THREE.Vector2(              //Se insertan puntos al arreglo
                     Math.pow(2.15,i),      //Eje x
                     i));                  //Eje z
