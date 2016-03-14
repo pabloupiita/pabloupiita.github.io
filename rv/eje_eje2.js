@@ -25,3 +25,4 @@ renderer.render(escena,camara);
 
 var camara,escena,renderer,malla;
 setup();
+loop();
