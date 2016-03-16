@@ -4,7 +4,6 @@ var textura = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures
 var material= new THREE.MeshLambertMaterial({map: textura});
 var forma =new THREE.BoxGeometry(1,1,1);
 malla= new THREE.Mesh(forma,material);
-malla.scale.set(1,4,9);
 
 var luzPuntual = new THREE.PointLight(0xFFFFFF);
 luzPuntual.position.x=10;
