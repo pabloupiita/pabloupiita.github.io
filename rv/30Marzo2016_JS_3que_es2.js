@@ -5,7 +5,7 @@ cubo1=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),
                       new THREE.MeshNormalMaterial());
 cubo2=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),
                       new THREE.MeshNormalMaterial());
-pelota=new THREE.Mesh(new THREE.SphereGeometry0.5),
+pelota=new THREE.Mesh(new THREE.SphereGeometry(0.5),
                       new THREE.MeshNormalMaterial());
 cubo1.position.x=7;
 cubo2.position.x=-7;
@@ -15,7 +15,7 @@ camara.position.z=20;
 
 raycaster1= new THREE.Raycaster(pelota.position,new THREE.Vector3(1,0,0));
 raycaster2= new THREE.Raycaster(pelota.position,new THREE.Vector3(-1,0,0));
-raycaster.setFromCamera(new THREE.Vector2(0,0),camara);
+
 escena=new THREE.Scene();
 escena.add(cubo1);
 escena.add(cubo2);
