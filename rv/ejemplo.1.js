@@ -9,7 +9,7 @@ this.sensor=new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
 }
 
 Pelota.prototype =new Agent();
-Pelota.protoype.sense=function(enviroment){
+Pelota.prototype.sense=function(enviroment){
   this.sensor.set(this.position,new THREE.Vector3(1,0,0));
   var obstaculo1=this.sensor.intersectObjects(enviroment.children,true);
   
