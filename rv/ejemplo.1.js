@@ -39,7 +39,7 @@ Pelota.protoype.sense=function(enviroment){
   
   
   Pared.prototype = new THREE.Object3D();
-  function.setup(){
+  function setup(){
   entorno=new Enviroment();
   camara= new THREE.PerspectiveCamera();
   camara.position.z=30;
