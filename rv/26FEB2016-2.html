@@ -21,7 +21,7 @@
     
     var camara = new THREE.PerspectiveCamera( fov, aspect, near, far );
     
-    camara.position.z = 50;
+    camara.position.z = 500;
     
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -31,21 +31,21 @@
     
     <script>
     var figura = new THREE.Shape();
-    figura.moveTo(2,2) ;
-    figura.lineTo(8,2);
-    figura.lineTo(8,3);
-    figura.lineTo(6,3); 
-    figura.lineTo(6,5); 
-    figura.lineTo(8,5); 
-    figura.lineTo(8,6); 
-    figura.lineTo(2,6); 
-    figura.lineTo(2,5); 
-    figura.lineTo(4,5);
-    figura.lineTo(4,3); 
-    figura.lineTo(2,3);
-    figura.lineTo(2,2); 
+    figura.moveTo(20,20) ;
+    figura.lineTo(80,20);
+    figura.lineTo(80,30);
+    figura.lineTo(60,30); 
+    figura.lineTo(60,50); 
+    figura.lineTo(80,50); 
+    figura.lineTo(80,60); 
+    figura.lineTo(20,60); 
+    figura.lineTo(20,50); 
+    figura.lineTo(40,50);
+    figura.lineTo(40,30); 
+    figura.lineTo(20,30);
+    figura.lineTo(20,20); 
         
-    var forma = new THREE.ExtrudeGeometry(figura,{amount:1});
+    var forma = new THREE.ExtrudeGeometry(figura,{amount:10});
     var malla = new THREE.Mesh(forma);
     escena.add(malla);
    
