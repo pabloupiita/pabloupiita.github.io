@@ -21,7 +21,7 @@
     
     var camara = new THREE.PerspectiveCamera( fov, aspect, near, far );
     
-    camara.position.z = 50;
+    camara.position.z = 10;
     
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -45,7 +45,7 @@
     figura.lineTo(2,3);
     figura.lineTo(2,2); 
         
-    var forma = new THREE.ExtrudeGeometry(figura,{amount:0});
+    var forma = new THREE.ExtrudeGeometry(figura,{amount:1});
     var malla = new THREE.Mesh(forma);
     escena.add(malla);
    
