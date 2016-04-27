@@ -1,37 +1,30 @@
 function rueda(){
 	THREE.Object3D.call(this);
 	THREE.ImageUtils.crossOrigin = '';
-	this.textura = 	THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
-
+	var textura = 	THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
 	this.arcShape = new THREE.Shape();
-				this.arcShape.moveTo( 50, 10 );
-				this.arcShape.absarc( 10, 10, 40, 0, Math.PI*2, false );
+	this.arcShape.moveTo( 50, 10 );
+	this.arcShape.absarc( 10, 10, 40, 0, Math.PI*2, false );
 	this.holePath = new THREE.Path();
-				this.holePath.moveTo( 20, 10 );
-				this.holePath.absarc( 10, 10, 10, 0, Math.PI*2, true );
-				this.arcShape.holes.push( this.holePath );
-
+	this.holePath.moveTo( 20, 10 );
+	this.holePath.absarc( 10, 10, 10, 0, Math.PI*2, true );
+	this.arcShape.holes.push( this.holePath );
 	this.extrudeSettings = { amount: 8, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1 };
-	
 	this.rueda = new THREE.ExtrudeGeometry( this.arcShape, this.extrudeSettings );
 	this.material = new THREE.MeshPhongMaterial({ map: this.textura});
 	this.mallaRueda = new THREE.Mesh( this.rueda, this.material );
-
 	this.add(this.mallaRueda);
-
 }
-	rueda.prototype = new THREE.Object3D();
+rueda.prototype = new THREE.Object3D();
 	
 function base(){
 	THREE.Object3D.call(this);
 	this.malla = new THREE.Mesh( new THREE.BoxGeometry( 50,20,98 ), new THREE.MeshNormalMaterial({ color: 0x0000ff }) );
-
 	this.add(this.malla);
 }
 base.prototype = new THREE.Object3D();
 
-
-function setup_uno(){
+function setup(){
 	var material = new THREE.MeshPhongMaterial({color: 0x0000ff });
 
 		var soporte = new THREE.BoxGeometry( 10,10,70);
