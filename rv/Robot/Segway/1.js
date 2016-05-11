@@ -40,10 +40,10 @@ function setup(){
                          new THREE.MeshNormalMaterial());
                          
                 cubo1.position.x=50;
-                cubo2.position.x -=50;
+                cubo2.position.x=-50;
 
 		var soporte = new THREE.BoxGeometry( 10,10,70);
-		var soporte2 = new THREE.CylinderGeometry(5,5.25 );
+		var soporte2 = new THREE.CylinderGeometry(5,5.25);
 
 		var mallaSoporte = new THREE.Mesh( soporte, material);
 		var mallaSoporte2 = new THREE.Mesh( soporte2, material);
@@ -64,7 +64,7 @@ function setup(){
 	camara.position.y = 1000;
 	camara.rotation.x = -1.57;
 	raycaster1 = new THREE.Raycaster( mallaRueda1.position, new THREE.Vector3(1,0,0));
-  	raycaster2 = new THREE.Raycaster( mallaRueda2.position, new THREE.Vector3(-1,0,0));	
+  	raycaster2 = new THREE.Raycaster( mallaRueda2.position, new THREE.Vector3(1,0,0));	
   
   	escena = new THREE.Scene(); 
 	escena.add(mallaRueda1);
