@@ -58,7 +58,7 @@ function setup(){
 	var luzAmbiental = new THREE.AmbientLight(0x404040);
   
   	camara = new THREE.PerspectiveCamera();
-	camara.position.y = 1500;
+	camara.position.y = 3500;
 	camara.rotation.x = -1.57;
 	raycaster1 = new THREE.Raycaster( mallaRueda1.position, new THREE.Vector3(1,0,0));
   	raycaster2 = new THREE.Raycaster( mallaRueda2.position, new THREE.Vector3(-1,0,0));	
