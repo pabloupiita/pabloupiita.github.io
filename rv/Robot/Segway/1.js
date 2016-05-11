@@ -55,10 +55,7 @@ function setup(){
 		mallaSoporte.position.set( 0, 100, 50);
 		mallaSoporte2.position.set( 0, 50, 53 );
 		
-	var luzPuntual = new THREE.PointLight( 0xffffff );
-  	luzPuntual.position.x = 0;
-  	luzPuntual.position.y = 0;
-  	luzPuntual.position.z = 500;
+	var luzAmbiental = new THREE.AmbientLight(0x404040);
   
   	camara = new THREE.PerspectiveCamera();
 	camara.position.y = 500;
@@ -70,7 +67,7 @@ function setup(){
 	escena.add(mallaRueda1);
 	escena.add(mallaRueda2);
 	escena.add( mallaBase);
-	escena.add(luzPuntual);
+	escena.add(luzAmbiental);
 	escena.add(mallaSoporte);
 	escena.add(mallaSoporte2);
 	escena.add(camara);
