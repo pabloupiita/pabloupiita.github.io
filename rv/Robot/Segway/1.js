@@ -34,9 +34,9 @@ base.prototype = new THREE.Object3D();
 function setup(){
 	var material = new THREE.MeshPhongMaterial({color: 0x0000ff });
 	
-		cubo1 = new THREE.Mesh(  new THREE.BoxGeometry(1,1,1),
+		cubo1 = new THREE.Mesh(  new THREE.BoxGeometry(10,10,10),
                          new THREE.MeshNormalMaterial());
-		cubo2 = new THREE.Mesh(  new THREE.BoxGeometry(1,1,1),
+		cubo2 = new THREE.Mesh(  new THREE.BoxGeometry(10,10,10),
                          new THREE.MeshNormalMaterial());
                          
                 cubo1.position.x=50;
