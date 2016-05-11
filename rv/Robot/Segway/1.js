@@ -58,7 +58,7 @@ function setup(){
 	var luzAmbiental = new THREE.AmbientLight(0x404040);
   
   	camara = new THREE.PerspectiveCamera();
-	camara.position.y = 3500;
+	camara.position.y = 2000;
 	camara.rotation.x = -1.57;
 	raycaster1 = new THREE.Raycaster( mallaRueda1.position, new THREE.Vector3(1,0,0));
   	raycaster2 = new THREE.Raycaster( mallaRueda2.position, new THREE.Vector3(-1,0,0));	
@@ -89,8 +89,8 @@ function loop(){
     (obstaculo2.length> 0 && (obstaculo2[0].distance<= 0.5)))
   step = -step;
 
-  mallaRueda1.position.x += 150*step;
-  mallaRueda2.position.x += 150*step;
+  mallaRueda1.position.x += 30*step;
+  mallaRueda2.position.x += 30*step;
   
   renderer.render(escena,camara);
   requestAnimationFrame(loop);
