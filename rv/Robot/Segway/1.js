@@ -89,8 +89,8 @@ function loop(){
     (obstaculo2.length> 0 && (obstaculo2[0].distance<= 0.5)))
   step = -step;
 
-  mallaRueda1.position.x += step;
-  mallaRueda2.position.x += step;
+  mallaRueda1.position.x += 15*step;
+  mallaRueda2.position.x += 15*step;
   
   renderer.render(escena,camara);
   requestAnimationFrame(loop);
