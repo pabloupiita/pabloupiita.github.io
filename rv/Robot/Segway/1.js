@@ -38,6 +38,9 @@ function setup(){
                          new THREE.MeshNormalMaterial());
 		cubo2 = new THREE.Mesh(  new THREE.BoxGeometry(1,1,1),
                          new THREE.MeshNormalMaterial());
+                         
+                cubo1.position.x=50;
+                cubo2.position.x=-50;
 
 		var soporte = new THREE.BoxGeometry( 10,10,70);
 		var soporte2 = new THREE.CylinderGeometry(5,5.25 );
