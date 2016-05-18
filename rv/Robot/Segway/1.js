@@ -106,20 +106,20 @@ function loop() {
   Obs4=raycaster.intersectObject(Pared4);
   
   if ((Obs1.length>0) && (Obs1[0].distance<=10)){
-    raycaster.set(Rueda1.position,new THREE.Vector3(0,0,1));
+    raycaster.set(Rueda1,new THREE.Vector3(0,0,1));
 	dir=2;
   }
   
   if ((Obs2.length>0) && (Obs2[0].distance<=10)){
-    raycaster.set(Rueda1.position,new THREE.Vector3(-1,0,0));
+    raycaster.set(Rueda1,new THREE.Vector3(-1,0,0));
 	dir=3;
   }
  if ((Obs3.length>0) && (Obs3[0].distance<=10)){
-    raycaster.set(Rueda1.position,new THREE.Vector3(0,0,-1));
+    raycaster.set(Rueda1,new THREE.Vector3(0,0,-1));
 	dir=4;
   }
   if ((Obs4.length>0) && (Obs4[0].distance<=10)){
-    raycaster.set(Rueda1.position,new THREE.Vector3(1,0,0));
+    raycaster.set(Rueda1,new THREE.Vector3(1,0,0));
 	dir=1;
   }
 if (dir==1){
