@@ -79,7 +79,10 @@ function setup(){
 	// camara.position.y =100;
 	camara.rotation.x = -1.57;
 
-	raycaster = new THREE.Raycaster(Segway.position, new THREE.Vector3(1,0,0));
+	raycaster1 = new THREE.Raycaster(Segway.position, new THREE.Vector3(1,0,0));
+	raycaster2 = new THREE.Raycaster(Segway.position, new THREE.Vector3(0,0,1));
+	raycaster3 = new THREE.Raycaster(Segway.position, new THREE.Vector3(-1,0,0));
+	raycaster4 = new THREE.Raycaster(Segway.position, new THREE.Vector3(0,0,-1));
 
   	escena = new THREE.Scene(); 
 	escena.add(luzfocal);
@@ -100,26 +103,26 @@ function setup(){
 }
 
 function loop() {
-  Obs1=raycaster.intersectObject(Pared1);
-  Obs2=raycaster.intersectObject(Pared2);
-  Obs3=raycaster.intersectObject(Pared3);
-  Obs4=raycaster.intersectObject(Pared4);
+  Obs1=raycaster1.intersectObject(Pared1,true);
+  Obs2=raycaster2.intersectObject(Pared2,true);
+  Obs3=raycaster3.intersectObject(Pared3,true);
+  Obs4=raycaster4.intersectObject(Pared4,true);
   
   if ((Obs1.length>0) && (Obs1[0].distance<=10)){
-    raycaster.set(Rueda1,new THREE.Vector3(0,0,1));
+    raycaster2.set(Segway.position,new THREE.Vector3(0,0,1));
 	dir=2;
   }
   
   if ((Obs2.length>0) && (Obs2[0].distance<=10)){
-    raycaster.set(Rueda1,new THREE.Vector3(-1,0,0));
+    raycaster3.set(Segway.position,new THREE.Vector3(-1,0,0));
 	dir=3;
   }
  if ((Obs3.length>0) && (Obs3[0].distance<=10)){
-    raycaster.set(Rueda1,new THREE.Vector3(0,0,-1));
+    raycaster4.set(Segway.position,new THREE.Vector3(0,0,-1));
 	dir=4;
   }
   if ((Obs4.length>0) && (Obs4[0].distance<=10)){
-    raycaster.set(Rueda1,new THREE.Vector3(1,0,0));
+    raycaster1.set(Segway.position,new THREE.Vector3(1,0,0));
 	dir=1;
   }
 if (dir==1){
