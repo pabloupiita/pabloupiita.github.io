@@ -23,14 +23,6 @@ function rueda(){
 }
 	rueda.prototype = new THREE.Object3D();
 
-
-
-
-
-
-
-
-	
 function base(){
 	THREE.Object3D.call(this);
 	this.malla = new THREE.Mesh( new THREE.BoxGeometry( 50,20,98 ), new THREE.MeshNormalMaterial() );
@@ -39,40 +31,28 @@ function base(){
 }
 base.prototype = new THREE.Object3D();
 
-
-
-
-
-
-
-
 function setup(){
 	var material = new THREE.MeshNormalMaterial();
-	
-	
-	
 	Pared1= new THREE.Mesh(new THREE.BoxGeometry(20,80,1020),new THREE.MeshNormalMaterial());
 	Pared2= new THREE.Mesh(new THREE.BoxGeometry(1020,80,20),new THREE.MeshNormalMaterial());
 	Pared3= new THREE.Mesh(new THREE.BoxGeometry(20,80,1020),new THREE.MeshNormalMaterial());	
 	Pared4= new THREE.Mesh(new THREE.BoxGeometry(1020,80,20),new THREE.MeshNormalMaterial());
 	
+	var formaSoporte1 = new THREE.BoxGeometry( 10,10,70);
+	var formaSoporte2 = new THREE.CylinderGeometry(5,5.25 );
 
-		var formaSoporte1 = new THREE.BoxGeometry( 10,10,70);
-		var formaSoporte2 = new THREE.CylinderGeometry(5,5.25 );
-
+	var Soporte1 = new THREE.Mesh(formaSoporte1, material);
+	var Soporte2 = new THREE.Mesh(formaSoporte2, material);
 		
-		var Soporte1 = new THREE.Mesh(formaSoporte1, material);
-		var Soporte2 = new THREE.Mesh(formaSoporte2, material);
-		
-		Base = new base();
-		Rueda1 = new  rueda ();
-		Rueda2 = new  rueda ();
+	Base = new base();
+	Rueda1 = new  rueda ();
+	Rueda2 = new  rueda ();
 
-		Rueda1.position.set( 0, 0, 0);
-		Rueda2.position.set( 0, 0, 100);
-		Soporte1.position.set( 0, 100, 50);
-		Soporte2.position.set( 0, 50, 53 );
-		Base.position.set( 0, 0, 50); 
+	Rueda1.position.set( 0, 0, 0);
+	Rueda2.position.set( 0, 0, 100);
+	Soporte1.position.set( 0, 100, 50);
+	Soporte2.position.set( 0, 50, 53 );
+	Base.position.set( 0, 0, 50); 
 		
 	var forma = new THREE.Geometry();
 	
@@ -99,11 +79,8 @@ function setup(){
 	// camara.position.y =100;
 	camara.rotation.x = -1.57;
 
-
 	raycaster = new THREE.Raycaster(Segway.position, new THREE.Vector3(1,0,0));
-  	
-  	
-  	
+
   	escena = new THREE.Scene(); 
 	escena.add(luzfocal);
 	escena.add(camara);
@@ -122,53 +99,39 @@ function setup(){
 	step = 0.5;
 }
 
-
-
-
-
-
 function loop() {
-
-  
   Obs1=raycaster.intersectObject(Pared1);
   Obs2=raycaster.intersectObject(Pared2);
   Obs3=raycaster.intersectObject(Pared3);
   Obs4=raycaster.intersectObject(Pared4);
   
   if ((Obs1.length>0) && (Obs1[0].distance<=10)){
-    raycaster.set(Segway.position,new THREE.Vector3(0,0,1));
+    raycaster.set(Rueda1.position,new THREE.Vector3(0,0,1));
 	dir=2;
-	
   }
   
   if ((Obs2.length>0) && (Obs2[0].distance<=10)){
-    raycaster.set(Segway.position,new THREE.Vector3(-1,0,0));
+    raycaster.set(Rueda1.position,new THREE.Vector3(-1,0,0));
 	dir=3;
   }
  if ((Obs3.length>0) && (Obs3[0].distance<=10)){
-    raycaster.set(Segway.position,new THREE.Vector3(0,0,-1));
+    raycaster.set(Rueda1.position,new THREE.Vector3(0,0,-1));
 	dir=4;
   }
-  
   if ((Obs4.length>0) && (Obs4[0].distance<=10)){
-    raycaster.set(Segway.position,new THREE.Vector3(1,0,0));
+    raycaster.set(Rueda1.position,new THREE.Vector3(1,0,0));
 	dir=1;
   }
-
-
 if (dir==1){
 	Segway.position.x+=step;
 	Segway.rotation.y=0;
 	Segway.rotation.z=0;
-	
 	Rueda1.position.x+=step;
 	Rueda1.rotation.y=0;
 	Rueda1.rotation.z=0;
-	
 	Rueda2.position.x+=step;
 	Rueda2.rotation.y=0;
 	Rueda2.rotation.z=0;	
-	 	 
 	Base.position.x+=step;
 	Base.rotation.y=0;
 	Base.rotation.z=0;
@@ -177,71 +140,49 @@ if (dir==1){
 	Segway.position.z+=step;
 	Segway.rotation.y=1.57;
 	Segway.rotation.z=1;
-	
-	
-	
-	
 	Rueda1.position.z+=step;
 	Rueda1.rotation.y=1.57;
 	Rueda1.rotation.z=0;
 //	Rueda1.position.x=452.5;
-	
 	Rueda2.position.z+=step;
 	Rueda2.rotation.y=1.57;
 	Rueda2.rotation.z=0;
 	Rueda1.position.x=546.5;
-	 	 
 	Base.position.z+=step;
 	Base.rotation.y=1.57;
 	Base.rotation.z=0;
-	 
   }
   else if(dir==3){
 	Segway.position.x-=step;
 	Segway.rotation.y=-1.57;
 	Segway.rotation.z=0;
-	
 	Rueda1.position.x-=step;
 	Rueda1.rotation.y=-1.57;
 	Rueda1.rotation.z=0;
-	
 	Rueda2.position.x-=step;
 	Rueda2.rotation.y=-1.57;
 	Rueda2.rotation.z=0;	
-	 	 
 	Base.position.x-=step;
 	Base.rotation.y=-1.57;
 	Base.rotation.z=0;
-	
-	
   }
   else if(dir==4){
 	Segway.position.z-=step;
 	Segway.rotation.y=3.14;
 	Segway.rotation.z=0;
-	
 	Rueda1.position.z-=step;
 	Rueda1.rotation.y=3.14;
 	Rueda1.rotation.z=0;
-	
 	Rueda2.position.z-=step;
 	Rueda2.rotation.y=3.14;
 	Rueda2.rotation.z=0;	
-	 	 
 	Base.position.z-=step;
 	Base.rotation.y=3.14;
 	Base.rotation.z=0;
-    
-	}
-	
- 
-  
-  
-  
+}
   renderer.render(escena,camara);
   requestAnimationFrame(loop);
 }
-
 var escena, camara, renderer, Pared1, Pared2,Pared3,Pared4, Segway;
 var Obs1,Obs2,Obs3,Obs4;
 var dir
@@ -250,6 +191,5 @@ var cubo1, cubo2, mallaRobot, camara, escena, renderer;
 var Rueda1, Rueda2, mallaBase, Soporte, Soporte2;
 var raycaster, step;
 var obstaculo1, obstaculo2;
-
 setup();
 loop();
