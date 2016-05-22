@@ -85,7 +85,7 @@ function setup(){
 	Segway = new THREE.Mesh(forma, material);
 	
 	Pared1.position.x=500;
-	Pared2.position.z=650;
+	Pared2.position.z=550;
 	Pared3.position.x=-500;
 	Pared4.position.z=-500;	
 		
